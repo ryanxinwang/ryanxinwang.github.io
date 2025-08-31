@@ -245,14 +245,13 @@
           });
         });
 
-        // Professional loading animation
+        // Professional loading animation - removed body opacity changes to keep header visible
         window.addEventListener('load', function() {
-          document.body.style.opacity = '0';
-          document.body.style.transition = 'opacity 0.5s ease';
-          
-          setTimeout(() => {
-            document.body.style.opacity = '1';
-          }, 100);
+          // Ensure header and navigation are always visible
+          const header = document.getElementById('header');
+          const nav = document.getElementById('nav');
+          if (header) header.style.opacity = '1';
+          if (nav) nav.style.opacity = '1';
         });
 
         // Add typing effect to the main title
@@ -293,9 +292,15 @@
           }
           
           #header {
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.95);
+            /* Keep header fully visible and maintain original styling */
+            background: #2c3e50 !important;
             transition: all 0.3s ease;
+          }
+          
+          #nav {
+            /* Ensure navigation menu is always visible */
+            opacity: 1 !important;
+            visibility: visible !important;
           }
           
           .image.right img {
