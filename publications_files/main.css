@@ -20,9 +20,22 @@
   padding-bottom: 10px;/*10*/
   padding-left: 10px;
   position: relative;/*relative*/
-
-
 }
+
+/* Restore numbering for lists inside content boxes */
+.box ol {
+    list-style: decimal;
+    margin-left: 1.5em; /* Make space for numbers */
+    padding-left: 0.5em;
+}
+
+/* Improve readability on mobile */
+@media screen and (max-width: 736px) {
+    .box ol li {
+        margin-bottom: 1em; /* Add space between items */
+    }
+}
+
     
 .two-columns {
 
